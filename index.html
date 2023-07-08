@@ -1,1 +1,256 @@
-Our tutorial materials will be posted in 7 days after the ACL tutorial!
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACL 2023 Tutorial: Complex Reasoning in Natural Language</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+              <span style="font-size: 80%">ACL 2023 Tutorial:</span><br />
+              Retrieval-based Language Models and Applications
+            </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <table>
+            <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="25%" style="text-align: center; padding: 3px"><img width="150px" height="150px" src="static/imgs/profile_wenting.jpeg"></td>
+                <td width="25%" style="text-align: center; padding: 3px"><img width="150px" height="150px" src="static/imgs/profile_mor.jpeg"></td>
+                <td width="25%" style="text-align: center; padding: 3px"><img width="150px" height="150px" src="static/imgs/profile_yuchen.png"></td>
+                <td width="25%" style="text-align: center; padding: 3px"><img width="150px" height="150px" src="static/imgs/profile_michi.png"></td>
+                <td width="25%" style="text-align: center; padding: 3px"><img width="150px" height="150px" src="static/imgs/profile_aman.png"></td>
+                <td width="25%" style="text-align: center; padding: 3px"><img width="150px" height="150px" src="static/imgs/profile_tao.png"></td>
+
+            </tr>
+              <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="25%" style="text-align: center"><a href="https://wenting-zhao.github.io/" style="border-radius: 50%">Wenting Zhao</a><sup>1</sup>,</td>
+                <td width="25%" style="text-align: center"><a href="https://mega002.github.io/" style="border-radius: 50%">Mor Geva</a><sup>2</sup>,</td>
+                <td width="25%" style="text-align: center"><a href="https://yuchenlin.xyz/" style="border-radius: 50%">Bill Yuchen Lin</a><sup>3</sup>,</td>
+                <td width="25%" style="text-align: center"><a href="https://cs.stanford.edu/~myasu/" style="border-radius: 50%">Michihiro Yasunaga</a><sup>4</sup></td>
+                <td width="25%" style="text-align: center"><a href="https://yuchenlin.xyz/" style="border-radius: 50%">Aman Madaan</a><sup>5</sup></td>
+                <td width="25%" style="text-align: center"><a href="https://taoyds.github.io/" style="border-radius: 50%">Tao Yu</a><sup>6</sup></td>
+
+              </tr>
+            </table>
+            </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Cornell University,</span>
+            <span class="author-block"><sup>2</sup>Google,</span>
+            <span class="author-block"><sup>2</sup>AI2,</span>
+            <span class="author-block"><sup>2</sup>Stanford University,</span>
+            <span class="author-block"><sup>2</sup>Carnegie Mellon University,</span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong,</span>
+          </div>
+          <br />
+          <div class="is-size-5 publication-authors">
+            <b>Sunday July 9 9:00 - 12:30 (EDT) @ Metropolitan Centre</b>
+          </div>
+          <div class="is-size-5 publication-authors">
+            We will take Q&A through Rocket.Chat: <a href="https://acl.rocket.chat/channel/tutorial-2" target="_blank"><b>tinyurl.com/retrieval-lm-tutorial</b></a>
+          </div>
+          <br />
+          <div class="is-size-6 publication-authors">
+            <em>Slides may be subject to updates</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">About this tutorial</h2>
+        <div class="content has-text-justified">
+          <p>
+              Teaching machines to reason over texts has been a long-standing goal of natural language processing (NLP).
+              To this end, researchers have designed a diverse set of complex reasoning tasks that involve 
+              compositional reasoning, knowledge retrieval, grounding, commonsense reasoning, etc.
+          </p>
+          <p>
+              A standard choice for building systems that perform a desired type of reasoning is to fine-tune a pretrained language model (LM) 
+              on specific downstream tasks. However, recent research has demonstrated that such a straightforward approach is often brittle, and that 
+              the reasoning capabilities of these models thus remain at a surface level, i.e., exploiting data patterns.
+              Consequently, augmenting LMs with techniques that make them robust and effective becomes an active research area.
+          </p>
+          <p>
+              This tutorial provides an overview of complex reasoning tasks where the standard application of pretrained language models fails.
+              This tutorial then reviews recent promising directions for tackling these tasks. 
+              Specifically, we focus on the following groups of approaches that explicitly consider problem structures: 
+              (1) knowledge-augmented methods, where the knowledge is either incorporated during fine-tuning or pretraining;
+              (2) few-shot prompting methods, which effectively guide the models to follow instructions;
+              (3) neuro-symbolic methods, which produce explicit intermediate representations;
+              and, (4) rationale-based methods, one of the most popular forms of the neuro-symbolic methods, which highlight subsets of input as explanations for individual model predictions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Schedule</h2>
+        <p>
+          Our tutorial will be held on July 9 (all the times are based on EDT = Toronto local time):
+        </p>
+
+        <div class="content has-text-justified">
+
+          <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+          .tg .tg-0lax{text-align:left;vertical-align:top}
+          </style>
+          <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0pky">Time</th>
+              <th class="tg-0lax">Section</th>
+              <th class="tg-0lax">Presenter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax">9:00—9:15</td>
+              <td class="tg-0lax">Section 1: Introduction  <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Wenting</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">9:15—9:40</td>
+              <td class="tg-0lax">Section 2: Benchmarks & Evaluation <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Mor</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">9:40—10:05</td>
+              <td class="tg-0lax">Section 3: Knowledge-Augmented Approaches after Pretraining <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Sewon</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">10:05—10:30</td>
+              <td class="tg-0lax">Section 4: Knowledge-augmented Approaches during Pretraining <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Michi</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:30—16:00</td>
+              <td class="tg-0lax">Coffee break</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:00—16:25</td>
+              <td class="tg-0lax">Section 5: Few-shot Prompting Approaches  <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Aman</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:25—17:00</td>
+              <td class="tg-0lax">Section 6: Neuro-symbolic approaches: LLMs + Tool Use <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Tao</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">17:00—17:10</td>
+              <td class="tg-0lax">Section 7: Rationale-based approaches & Conclusions <a href="" target='_blank'>[Slides]</a></td>
+              <td class="tg-0lax">Wenting</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ retrieval-lm-tutorial,
+  author    = { Zhao, Wenting and Geva, Mor and Lin, Bill Yuchen and Yasunaga, Michihiro and Madaan, Aman and Yu, Tao},
+  title     = { ACL 2023 Tutorial: Complex Reasoning in Natural Language },
+  journal   = { ACL 2023 },
+  year      = { 2023 },
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/ACL2023-Retrieval-LM" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
